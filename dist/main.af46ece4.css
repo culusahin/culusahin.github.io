@@ -1,85 +1,73 @@
+@font-face {
+  font-family: "Grotesque";
+  src: url(/HKGrotesk-SemiBold.a485eff6.otf);
+}
+
 body {
   margin: 0;
   padding: 0;
+  background-color: #f6f6f6;
 }
 
 .container {
   width: 100vw;
   height: 95vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-
-.img {
-  width: 40%;
-  min-width: 220px;
-  min-height: 220px;
-  max-width: 1080px;
-  padding: 2% 1%;
-  background-color: transparent;
-  perspective: 3500px;
-}
-
-.img-inner {
-  position: relative;
-  width: 100%;
-  padding-top: 100%;
-  transition: transform 1.2s;
-  transform-style: preserve-3d;
-}
-
-.img:hover .img-inner-left {
-  transform: rotateY(-180deg);
-}
-
-.img:hover .img-inner-right {
-  transform: rotateY(180deg);
-}
-
-.img-front,
-.img-back {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.img-back {
-  color: white;
-  background-color: black;
-  transform: rotateY(-180deg);
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.img-right {
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.square {
+  width: 40%;
+  min-width: 220px;
+  min-height: 220px;
+  max-width: 1080px;
+  margin: 1% 1%;
+  background-color: transparent;
   background-clip: content-box;
-  background-color: #cfe3fb;
+  box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4%;
+}
+
+.album {
+  background-color: #fbf6cb;
+}
+
+.cengiz {
+  background-color: #cbdffb;
 }
 
 img {
-  display: block;
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  border-radius: 30px;
 }
 
-.icons {
-  width: 100%;
+.icon-row {
   display: flex;
   justify-content: center;
 }
 
+h1 {
+  font-size: calc(24px + (48 - 14) * ((100vw - 568px) / (3840 - 568)));
+  font-family: Grotesque;
+  margin: 5% 5px 0px;
+}
+
 .icon {
-  width: 5%;
-  max-width: 70px;
-  margin: 10px 2% 0px;
+  width: 7%;
+  max-width: 90px;
+  margin: 2% 10px 0px;
 }
 
 
