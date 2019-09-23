@@ -84,7 +84,7 @@ h1 {
 }
 
 .icon {
-  min-width: 7%;
+  width: 7%;
   max-width: 90px;
   margin: 2% 10px 0px;
 }
