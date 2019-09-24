@@ -15,6 +15,8 @@
     <meta property="og:description" content="Selectors Assemble | CoOp Presents | Dance Regular | Worldwide FM"/>
     <title>C E N G I Z (#itscengiz)</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/uriSchemeWithHyperlinkFallback.js"></script>
   </head>
   <body>
     <div class="container">
@@ -40,7 +42,7 @@
         <h1>#itscengiz</h1>
       </div>
       <div class="icon-row">
-        <a href="https://www.facebook.com/itscengiz" class="icon"
+        <a href="https://www.facebook.com/itscengiz" data-scheme="fb://profile/10000" class="icon"
           ><img src="icons/facebook.svg"
         /></a>
         <a href="https://www.instagram.com/cengizulusahin" class="icon"
@@ -54,5 +56,13 @@
         /></a>
       </div>
     </div>
+    <script>
+        // `intent` is the class we're using to wire this up. Use whatever you like.
+        $('a.intent').on('click', function (event) {
+            uriSchemeWithHyperlinkFallback($(this).data('scheme'), $(this).attr('href'));
+            // we don't want the default browser behavior kicking in and screwing everything up.
+            event.preventDefault();
+        });
+    </script>
   </body>
 </html>
